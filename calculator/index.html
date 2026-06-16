@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engineering Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="calc" id="app">
+  <div class="hist-panel" id="histPanel">
+    <div class="hist-header" onclick="toggleHist()">
+      <span>History</span>
+      <span class="hist-badge" id="histBadge">0</span>
+      <span id="histToggle">&#9660;</span>
+    </div>
+    <div class="hist-list" id="histList"></div>
+  </div>
+
+  <div class="display-area">
+    <div class="expr-display" id="exprDisplay">&nbsp;</div>
+    <div class="result-display" id="resultDisplay">0</div>
+    <div class="display-indicators" id="indicators">
+      <span class="ind" id="ind2nd">2nd</span>
+      <span class="ind" id="indRad">RAD</span>
+      <span class="ind" id="indMem">M</span>
+    </div>
+  </div>
+
+  <div class="btns">
+    <button class="btn mode" data-action="2nd" id="btn2nd">2nd</button>
+    <button class="btn mode" data-action="deg" id="degBtn">DEG</button>
+    <button class="btn g1" data-action="mc">MC</button>
+    <button class="btn g1" data-action="mr">MR</button>
+    <button class="btn g2" data-action="clear">C</button>
+
+    <button class="btn g1" data-action="mplus">M+</button>
+    <button class="btn g1" data-action="mminus">M-</button>
+    <button class="btn g3" data-action="(">(</button>
+    <button class="btn g3" data-action=")">)</button>
+    <button class="btn g2" data-action="del">⌫</button>
+
+    <button class="btn g4" data-action="sin">sin</button>
+    <button class="btn g4" data-action="cos">cos</button>
+    <button class="btn g4" data-action="tan">tan</button>
+    <button class="btn g4" data-action="log">log</button>
+    <button class="btn g4" data-action="ln">ln</button>
+
+    <button class="btn g4" data-action="sqrt">√</button>
+    <button class="btn g4" data-action="sq">x²</button>
+    <button class="btn g4" data-action="cube">x³</button>
+    <button class="btn g4" data-action="pow">xʸ</button>
+    <button class="btn g4" data-action="fact">n!</button>
+
+    <button class="btn g5" data-action="pi">π</button>
+    <button class="btn g5" data-action="e">e</button>
+    <button class="btn g5" data-action="exp">EXP</button>
+    <button class="btn g5" data-action="%">%</button>
+    <button class="btn mode" data-action="prog" id="progBtn">PROG</button>
+
+    <div class="divider"></div>
+
+    <button class="btn num" data-action="7">7</button>
+    <button class="btn num" data-action="8">8</button>
+    <button class="btn num" data-action="9">9</button>
+    <button class="btn op" data-action="÷">÷</button>
+    <button class="btn op" data-action="×">×</button>
+
+    <button class="btn num" data-action="4">4</button>
+    <button class="btn num" data-action="5">5</button>
+    <button class="btn num" data-action="6">6</button>
+    <button class="btn op" data-action="-">–</button>
+    <button class="btn op" data-action="+">+</button>
+
+    <button class="btn num" data-action="1">1</button>
+    <button class="btn num" data-action="2">2</button>
+    <button class="btn num" data-action="3">3</button>
+    <button class="btn g6" data-action="±">±</button>
+    <button class="btn g6" data-action=".">.</button>
+
+    <button class="btn num zero" data-action="0">0</button>
+    <button class="btn g6" data-action="ans">ANS</button>
+    <button class="btn g3" data-action="(">(</button>
+    <button class="btn g3" data-action=")">)</button>
+    <button class="btn eq" data-action="=">=</button>
+  </div>
+
+  <div class="prog-panel" id="progPanel">
+    <div class="prog-base">
+      <button class="btn prog-base-btn active" data-base="DEC">DEC</button>
+      <button class="btn prog-base-btn" data-base="HEX">HEX</button>
+      <button class="btn prog-base-btn" data-base="OCT">OCT</button>
+      <button class="btn prog-base-btn" data-base="BIN">BIN</button>
+    </div>
+    <div class="prog-row">
+      <button class="btn prog" data-action="A">A</button>
+      <button class="btn prog" data-action="B">B</button>
+      <button class="btn prog" data-action="C">C</button>
+      <button class="btn prog" data-action="D">D</button>
+      <button class="btn prog" data-action="E">E</button>
+      <button class="btn prog" data-action="F">F</button>
+      <button class="btn prog" data-action="<<">«</button>
+      <button class="btn prog" data-action=">>">»</button>
+      <button class="btn prog" data-action="and">AND</button>
+      <button class="btn prog" data-action="or">OR</button>
+      <button class="btn prog" data-action="xor">XOR</button>
+      <button class="btn prog" data-action="not">NOT</button>
+    </div>
+    <div class="prog-result" id="progResult"></div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
